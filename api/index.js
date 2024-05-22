@@ -15,3 +15,8 @@ console.log('Error: Could not connect to MongoDB');
 app.listen(3000, () => {
 console.log('server running on port 3000jdkfj');
 });
+
+app.get('/test', (req, res) => {
+    res.json({ message: "api is good" })
+
+});

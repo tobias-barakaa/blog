@@ -2,7 +2,7 @@
 const Signin = () => {
   return (
     <div>
-      sugbube
+      signin
     </div>
   )
 }

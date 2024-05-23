@@ -21,3 +21,10 @@ console.log('server running on port 3000jdkfj');
 
 app.use('/test/api', userRoutes)
 app.use('/api/auth', authRoutes)
+
+app.use((err, req, res, next) => {
+    const statuscode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    res.status(statuscode).json({ success: false, statuscode, message });
+});
+

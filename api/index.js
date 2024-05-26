@@ -3,11 +3,17 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';    
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
+import cors from 'cors';
 
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true, 
+  }));
 
 mongoose.connect(process.env.MONGO).then(() => {
 console.log('Connected to MongoDBf');
@@ -19,7 +25,7 @@ app.listen(3000, () => {
 console.log('server running on port 3000jdkfj');
 });
 
-app.use('/test/api', userRoutes)
+// app.use('/test/api', userRoutes)
 app.use('/api/auth', authRoutes)
 
 app.use((err, req, res, next) => {

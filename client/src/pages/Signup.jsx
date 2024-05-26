@@ -63,8 +63,7 @@ const Signup = () => {
             Blog
         </Link>
         <p className="text-sm mt-5">
-          This is a demo project, you can sign up with your email and password or 
-          with google
+          
         </p>
 
      </div>

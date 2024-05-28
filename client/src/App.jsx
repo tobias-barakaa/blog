@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 
 import Signin from './pages/Signin';
 import PrivateRoute from './components/Private.Route';
+import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute';
+import CreatePost from './pages/CreatePost';
 
 export default function App() {
 return (
@@ -21,6 +23,11 @@ return (
 
 <Route element={<PrivateRoute />} >
 <Route path="/dashboard" element={<Dashboard />} />
+
+
+</Route>
+<Route element={<OnlyAdminPrivateRoute />} >
+<Route path="/create-post" element={<CreatePost />} />
 
 
 </Route>
